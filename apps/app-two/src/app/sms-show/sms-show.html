@@ -1,4 +1,19 @@
 <p>Getting sms</p>
 <div>
-  <h2>{{sms()}}</h2>
+  @for (item of sms(); track $index) {
+  <div
+    class="flex m-3 p-2 rounded-md shadow-lg {{ getMyId() === item.senderId ? 'justify-end, bg-blue-500' : 'justify-start, bg-green-500' }}"
+  >
+    <p>{{item.message}}</p>
+  </div>
+  }
 </div>
+<input
+  type="text"
+  [(ngModel)]="message"
+  class="border border-gray-300 rounded-md p-2"
+/>
+<button (click)="sendMessage()" class="border border-gray-300 rounded-md p-2">
+  Send Message
+</button>
+<p>My ID: {{getMyId()}}</p>

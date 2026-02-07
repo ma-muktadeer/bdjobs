@@ -26,7 +26,7 @@ export class TestSocket {
     });
   }
 
-  sendMessage(message: string) {
+  sendMessage(message: any) {
     this.socket.emit('message', message);
   }
 
@@ -41,6 +41,10 @@ export class TestSocket {
 
   closeConnection() {
     this.socket.disconnect();
+  }
+
+  getSocketId() {
+    return this.socket.id;
   }
   // private socket: WebSocket;
 
