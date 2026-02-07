@@ -8,11 +8,13 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
+import { TestSocket } from 'libs/shared-ui/src/services/test-socket';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideClientHydration(withEventReplay()),
     provideBrowserGlobalErrorListeners(),
     provideRouter(appRoutes),
+    TestSocket,
   ],
 };
