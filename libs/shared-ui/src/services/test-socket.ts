@@ -46,15 +46,17 @@ export class TestSocket {
   getSocketId() {
     return this.socket.id;
   }
+
   // private socket: WebSocket;
 
   // constructor() {
-  //   this.socket = new WebSocket('http://localhost:3000');
+  //   this.socket = new WebSocket('http://localhost:3000', ['websocket', 'polling']);
   //   this.socket.onopen = () => {
   //     console.log('WebSocket connection opened');
   //   };
   //   this.socket.onmessage = (event) => {
   //     console.log('WebSocket message received:', event.data);
+  //     this.socket.send(event.data);
   //   };
   //   this.socket.onclose = () => {
   //     console.log('WebSocket connection closed');
@@ -66,6 +68,14 @@ export class TestSocket {
 
   // sendMessage(message: string) {
   //   this.socket.send(message);
+  // }
+
+  // getMessage() {
+  //   return this.socket.onmessage;
+  // }
+
+  // getSocketId() {
+  //   return this.socket.url;
   // }
 
   // closeConnection() {
