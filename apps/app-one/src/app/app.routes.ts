@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { Layout } from 'libs/shared-ui/src/lib/layout/layout';
+import { Layout } from '@company-workspace/shared-ui';
 import { Sms } from './sms/sms';
 
 export const appRoutes: Route[] = [
