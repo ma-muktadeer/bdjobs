@@ -1,4 +1,4 @@
 // export * from './lib/shared-ui/shared-ui';
-export * from './lib/layout/layout';
-export * from './lib/header/header';
-export * from './lib/footer/footer';
+export { Layout } from './lib/layout/layout';
+// export { Header } from './lib/header/header';
+// export { Footer } from './lib/footer/footer';
