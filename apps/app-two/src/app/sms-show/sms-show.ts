@@ -10,6 +10,7 @@ import { TestSocket } from 'libs/shared-ui/src/services/test-socket';
 })
 export class SmsShow {
   sms = signal<{ message: string, senderId: string }[]>([]);
+  myId = signal<string>('JERRY');
   message: string = '';
   constructor(private testSocket: TestSocket) {
 
@@ -25,9 +26,9 @@ export class SmsShow {
       const who = senderId === this.getMyId() ? 'Me' : senderId;
 
       if (senderId) {
-        this.sms.update((value) => [...value, { message: `${who} ${content.message}`, senderId }]);
+        this.sms.update((value) => [...value, { message: `${this.myId()} ${content.message}`, senderId }]);
       } else {
-        this.sms.update((value) => [...value, { message: `${who} ${JSON.stringify(data)}`, senderId: '' }]);
+        this.sms.update((value) => [...value, { message: `${this.myId()} ${JSON.stringify(data)}`, senderId: '' }]);
       }
     });
   }
