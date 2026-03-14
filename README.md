@@ -10,7 +10,6 @@
 
 [Click here to finish setting up your workspace!](https://cloud.nx.app/connect/QtU60gKUN7)
 
-
 ## Run tasks
 
 To run the dev server for your app, use:
